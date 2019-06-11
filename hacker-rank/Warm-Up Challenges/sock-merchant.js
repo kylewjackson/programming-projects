@@ -1,3 +1,5 @@
+//Date Completed: February 2019
+
 /* 
 Sock Merchant by Shafaet
 https://www.hackerrank.com/challenges/sock-merchant/problem

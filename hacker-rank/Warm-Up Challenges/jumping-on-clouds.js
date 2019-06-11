@@ -1,3 +1,5 @@
+//Date Completed: May 2019
+
 /*
 Jumping on the Clouds by Shafaet
 https://www.hackerrank.com/challenges/jumping-on-the-clouds/problem

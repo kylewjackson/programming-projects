@@ -1,3 +1,5 @@
+//Date Completed: May 2019
+
 /*
 Two Strings by zxqfd555
 https://www.hackerrank.com/challenges/two-strings/problem

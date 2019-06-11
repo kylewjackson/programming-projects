@@ -1,3 +1,5 @@
+//Date Completed: May 2019
+
 /*
 Repeated String by tunyash
 https://www.hackerrank.com/challenges/repeated-string/problem

@@ -1,3 +1,5 @@
+//Date Completed: May 2019
+
 /*
 Hash Tables: Ransom Note by saikiran9194
 https://www.hackerrank.com/challenges/ctci-ransom-note/problem

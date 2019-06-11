@@ -1,3 +1,5 @@
+//Date Completed: May 2019
+
 /*
 Arrays: Left Rotation by Heraldo
 https://www.hackerrank.com/challenges/ctci-array-left-rotation/problem

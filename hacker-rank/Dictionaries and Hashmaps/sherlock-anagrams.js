@@ -1,3 +1,5 @@
+//Date Completed: May 2019
+
 /*
 Sherlock and Anagrams by darkshadows
 https://www.hackerrank.com/challenges/sherlock-and-anagrams/problem

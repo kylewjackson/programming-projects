@@ -1,3 +1,5 @@
+//Date Completed: May 2019
+
 /*
 Array Mainpulation by amititkgp
 https://www.hackerrank.com/challenges/crush/problem
