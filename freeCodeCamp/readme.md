@@ -1,0 +1,2 @@
+### 1. Cash Register Project
+FCC's final project in the JS Algoriths and Data Structures course. Accepts purchase price as first argument, payment as second, and cash-in-drawer as third. Returns object with status and change, making note of insufficent funds.

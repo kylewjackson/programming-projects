@@ -1,0 +1,1 @@
+*Note:* Often my initial solutions will run into timeout errors, based on Hacker Rank's standards of efficiency. I'll be including both my first working solution, and the eventual solution which met all of the challenge's requirements.
