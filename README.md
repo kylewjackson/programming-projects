@@ -9,4 +9,5 @@ I've added a handful of solutions to HackerRank coding challenges, which I'll co
 Here is my [certifcate of completion](https://www.freecodecamp.org/certification/kylewjackson/javascript-algorithms-and-data-structures) of FCC's JavaScript course.
 
 ## Udemy Coding Projects
-**The Web Developer Bootcamp** taught by [Colt Steele](https://www.udemy.com/the-web-developer-bootcamp/)
+**The Web Developer Bootcamp** taught by [Colt Steele](https://www.udemy.com/the-web-developer-bootcamp/)  
+[Certificate of Completion](https://www.udemy.com/certificate/UC-GCOQR6MA/) - June 2019
