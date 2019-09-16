@@ -13,4 +13,4 @@ Here is my [certifcate of completion](https://www.freecodecamp.org/certification
 [Certificate of Completion](https://www.udemy.com/certificate/UC-GCOQR6MA/) - June 2019
 
 ## React Projects
-Tutorial projects while learning React.JS.
+Personal and Tutorial projects while learning React.JS.
