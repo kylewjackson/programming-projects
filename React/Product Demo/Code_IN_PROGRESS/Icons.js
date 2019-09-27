@@ -40,6 +40,31 @@ function StarIcon(props) {
     );
 };
 
+    function StarOutline(props) {
+        return (
+            <svg width="31" height="29" viewBox="0 0 31 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.5 1.61804L18.5044 10.8647L18.6167 11.2102H18.98H28.7025L20.8368 16.925L20.5429 17.1385L20.6552 17.484L23.6596 26.7307L15.7939 21.016L15.5 20.8024L15.2061 21.016L7.34039 26.7307L10.3448 17.484L10.4571 17.1385L10.1632 16.925L2.29747 11.2102H12.02H12.3833L12.4956 10.8647L15.5 1.61804Z" stroke={props.strokeColor} />
+            </svg>
+        );
+    };
+
+    function StarHalf(props) {
+        return (
+            <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.5 1.61804L18.5044 10.8647L18.6167 11.2102H18.98H28.7025L20.8368 16.925L20.5429 17.1385L20.6552 17.484L23.6596 26.7307L15.7939 21.016L15.5 20.8024L15.2061 21.016L7.34039 26.7307L10.3448 17.484L10.4571 17.1385L10.1632 16.925L2.29747 11.2102H12.02H12.3833L12.4956 10.8647L15.5 1.61804Z" stroke={props.strokeColor}/>
+            <path d="M6.38931 28.0398L15.5 21.4205V0L12.02 10.7102H0.758606L9.86928 17.3295L6.38931 28.0398Z" fill={props.fillColor} />
+            </svg>
+        );
+    };
+
+    function StarHalfNoOutline(props) {
+        return (
+            <svg width="16" height="29" viewBox="0 0 16 29" fill={props.fillColor} xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.38931 28.0398L15.5 21.4205V0L12.02 10.7102H0.758606L9.86928 17.3295L6.38931 28.0398Z" fill={props.fillColor}/>
+            </svg>
+        );
+    };
+
 function PlusIcon(props) {
     return (
         <svg width="10" height="10" viewBox="0 0 10 10" fill={props.fillColor} xmlns="http://www.w3.org/2000/svg">
@@ -59,7 +84,7 @@ function MinusIcon(props) {
 
 function ThumbsUpIcon(props) {
     return (
-        <svg width="21" height="21" viewBox="0 0 21 21" fill={props.fillColor} xmlns="http://www.w3.org/2000/svg">
+        <svg width="21" height="21" viewBox="0 0 21 21" fill={props.fillColor} opacity={props.opacity ? props.opacity : 1} xmlns="http://www.w3.org/2000/svg">
         <path d="M19.0364 8.95659C19.0364 8.95659 14.7836 8.95659 13.447 8.59774C12.1104 8.23888 8.34368 8.47812 8.34368 8.47812V20.44H19.0364V8.95659Z" fill={props.fillColor}/>
         <path d="M20.4814 10.0747C20.4814 9.40901 19.9498 8.86939 19.294 8.86939H15.3572C14.7014 8.86939 14.1698 9.40901 14.1698 10.0747C14.1698 10.7403 14.7014 11.2799 15.3572 11.2799H19.294C19.9498 11.2799 20.4814 10.7403 20.4814 10.0747Z" fill={props.fillColor}/>
         <path d="M21 12.8888C21 12.1107 20.3786 11.48 19.6121 11.48H16.0763C15.3098 11.48 14.6884 12.1107 14.6884 12.8888C14.6884 13.6668 15.3098 14.2975 16.0763 14.2975H19.6121C20.3786 14.2975 21 13.6668 21 12.8888Z" fill={props.fillColor}/>
@@ -73,7 +98,7 @@ function ThumbsUpIcon(props) {
 
 function ThumbsDownIcon(props) {
     return (
-        <svg width="21" height="21" viewBox="0 0 21 21" fill={props.fillColor} xmlns="http://www.w3.org/2000/svg">
+        <svg width="21" height="21" viewBox="0 0 21 21" fill={props.fillColor} opacity={props.opacity ? props.opacity : 1} xmlns="http://www.w3.org/2000/svg">
         <path d="M1.96358 12.0434C1.96358 12.0434 6.21637 12.0434 7.55296 12.4023C8.88956 12.7611 12.6563 12.5219 12.6563 12.5219V0.559999H1.96358V12.0434Z" fill={props.fillColor}/>
         <path d="M0.518612 10.9253C0.518612 11.591 1.05025 12.1306 1.70605 12.1306H5.64278C6.29859 12.1306 6.83022 11.591 6.83022 10.9253C6.83022 10.2597 6.29858 9.72007 5.64278 9.72007H1.70605C1.05025 9.72007 0.518612 10.2597 0.518612 10.9253Z" fill={props.fillColor}/>
         <path d="M0 8.11124C0 8.88928 0.621389 9.52 1.38791 9.52H4.9237C5.69022 9.52 6.31161 8.88928 6.31161 8.11124C6.31161 7.33321 5.69022 6.70249 4.9237 6.70249H1.38791C0.621389 6.70249 0 7.33321 0 8.11124Z" fill={props.fillColor}/>
@@ -85,4 +110,4 @@ function ThumbsDownIcon(props) {
     );
 };
 
-export {CartIcon, CloseArrowIcon, StarIcon, PlusIcon, MinusIcon, ThumbsUpIcon, ThumbsDownIcon};
+export {CartIcon, CloseArrowIcon, StarIcon, StarOutline, StarHalf, StarHalfNoOutline, PlusIcon, MinusIcon, ThumbsUpIcon, ThumbsDownIcon};
