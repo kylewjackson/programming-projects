@@ -62,6 +62,7 @@ export default function Game() {
 	const [currentMove, setCurrentMove] = useState(0);
 	const xIsNext = currentMove % 2 === 0;
 	const currentSquares = history[currentMove];
+	const [ascendingOrder, setAscendingOrder] = useState(true);
 
 	function handlePlay(nextSquares) {
 		const nextHistory = [
@@ -74,6 +75,10 @@ export default function Game() {
 
 	function jumpTo(nextMove) {
 		setCurrentMove(nextMove);
+	}
+
+	function handleAscendingOrder() {
+		setAscendingOrder(!ascendingOrder);
 	}
 
 	const moves = history.map((_squares, move) => {
@@ -104,7 +109,12 @@ export default function Game() {
 				/>
 			</div>
 			<div className="game-info">
-				<ol>{moves}</ol>
+				<ol>{ascendingOrder ? moves : [...moves].reverse()}</ol>
+				<button onClick={handleAscendingOrder}>
+					{ascendingOrder
+						? "Sort By Descending"
+						: "Sort By Ascending"}
+				</button>
 			</div>
 		</div>
 	);
