@@ -1,14 +1,14 @@
 import { useState } from "react";
 
-function Square({ value, onSquareClick }) {
+function Square({ value, winningSquare, onSquareClick }) {
 	return (
-		<button className="square" onClick={onSquareClick}>
+		<button className={winningSquare ? 'square winner' : 'square'} onClick={onSquareClick}>
 			{value}
 		</button>
 	);
 }
 
-function Board({ xIsNext, squares, onPlay }) {
+function Board({ xIsNext, squares, onPlay, winner, winningLine, isDraw }) {
 	function handleClick(i) {
 		if (squares[i] || calculateWinner(squares)) {
 			return;
@@ -22,10 +22,11 @@ function Board({ xIsNext, squares, onPlay }) {
 		onPlay(nextSquares);
 	}
 
-	const winner = calculateWinner(squares);
 	let status;
 	if (winner) {
-		status = "Winner: " + winner;
+		status = winner + " Wins! :)";
+	} else if (isDraw) {
+		status = "Oh no! It's a Draw :(";
 	} else {
 		status = "Next player: " + (xIsNext ? "X" : "O");
 	}
@@ -47,6 +48,7 @@ function Board({ xIsNext, squares, onPlay }) {
 											key={i}
 											value={squares[i]}
 											onSquareClick={() => handleClick(i)}
+											winningSquare={winningLine?.includes(i)}
 										/>
 									);
 								})}
@@ -63,10 +65,14 @@ export default function Game() {
 	const xIsNext = currentMove % 2 === 0;
 	const currentSquares = history[currentMove];
 	const [ascendingOrder, setAscendingOrder] = useState(true);
+	const result = calculateWinner(currentSquares);
+	const winner = result?.winner;
+	const winningLine = result?.line;
+	const isDraw = currentMove === 9 && !winner;
 
 	function handlePlay(nextSquares) {
 		const nextHistory = [
-			...history.splice(0, currentMove + 1),
+			...history.slice(0, currentMove + 1),
 			nextSquares,
 		];
 		setHistory(nextHistory);
@@ -88,15 +94,27 @@ export default function Game() {
 		} else {
 			description = "Go to game start";
 		}
-		return (
-			<li key={move}>
-				{move === currentMove ? (
-					<span>You are at move {move + 1}</span>
-				) : (
-					<button onClick={() => jumpTo(move)}>{description}</button>
-				)}
-			</li>
-		);
+
+		let content;
+		if (move === currentMove) {
+			if (winner) {
+				content = (
+					<span>
+						{winner} Won at Move {move}
+					</span>
+				);
+			} else if (isDraw) {
+				content = <span>It's a draw!</span>;
+			} else {
+				content = <span>You are at move {move + 1}</span>;
+			}
+		} else {
+			content = (
+				<button onClick={() => jumpTo(move)}>{description}</button>
+			);
+		}
+
+		return <li key={move}>{content}</li>;
 	});
 
 	return (
@@ -106,6 +124,9 @@ export default function Game() {
 					xIsNext={xIsNext}
 					squares={currentSquares}
 					onPlay={handlePlay}
+					winner={winner}
+					winningLine={winningLine}
+					isDraw={isDraw}
 				/>
 			</div>
 			<div className="game-info">
@@ -138,7 +159,7 @@ function calculateWinner(squares) {
 			squares[a] === squares[b] &&
 			squares[a] === squares[c]
 		) {
-			return squares[a];
+			return { winner: squares[a], line: [a, b, c] };
 		}
 	}
 	return null;

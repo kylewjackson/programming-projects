@@ -88,3 +88,7 @@ body {
 .game-info {
   margin-left: 20px;
 }
+
+.winner {
+	background-color: rgb(147, 244, 147);
+}
